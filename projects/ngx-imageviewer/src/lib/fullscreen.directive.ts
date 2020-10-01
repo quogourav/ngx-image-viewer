@@ -16,7 +16,7 @@ export class ToggleFullscreenDirective implements OnChanges {
   isFullscreen: boolean;
   element;
   isEnabled: boolean;
-  constructor(private el: ElementRef, @Inject(DOCUMENT) private document: any) {
+  constructor(@Inject(ElementRef) private el: ElementRef, @Inject(DOCUMENT) private document: any) {
     this.element = this.el.nativeElement;
     this.isEnabled = this.document.fullscreenEnabled;
   }
